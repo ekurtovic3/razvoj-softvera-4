@@ -7,14 +7,17 @@ public class Artikal {
     private String Sifra, Naziv;
 
     public void setCijena(double cijena) {
+        if(cijena<=0) throw new IllegalArgumentException ("Cijena je negativna");
         Cijena = cijena;
     }
 
     public void setSifra(String sifra) {
+        if(sifra.isEmpty()) throw new IllegalArgumentException ("Šifra je prazna");
         Sifra = sifra;
     }
 
     public void setNaziv(String naziv) {
+        if(naziv.isEmpty()) throw new IllegalArgumentException ("Naziv je prazan");
         Naziv = naziv;
     }
 
