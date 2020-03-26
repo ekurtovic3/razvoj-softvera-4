@@ -55,4 +55,11 @@ public class Artikal {
         return Sifra + "," + Naziv + "," + Cijena;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if (!(o instanceof Artikal)) return false;
+        Artikal artikal = (Artikal)o;
+        return (this.Cijena == artikal.Cijena && this.Naziv == artikal.Naziv && this.Sifra == artikal.Sifra);
+    }
+
 }
