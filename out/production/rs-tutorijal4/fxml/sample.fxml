@@ -22,9 +22,9 @@
                             <RowConstraints maxHeight="73.4" minHeight="10.0" prefHeight="73.4" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TextArea prefHeight="59.0" prefWidth="88.0" />
-                              <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" text="Dodaj artikle" GridPane.columnIndex="1" />
+                              <TextArea prefHeight="82.0" prefWidth="87.0" fx:id="unosArtikla" />
+                              <TextArea editable="false" prefHeight="74.0" prefWidth="87.0" GridPane.rowIndex="2" fx:id="ispisArtikla" />
+                              <Button mnemonicParsing="false" text="Dodaj artikle" GridPane.columnIndex="1" onAction="#dodajArtikle" />
                            </children>
                         </GridPane>
                      </children></AnchorPane>
