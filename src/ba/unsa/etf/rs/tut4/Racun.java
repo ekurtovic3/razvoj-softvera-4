@@ -6,6 +6,22 @@ public class Racun {
     ArrayList<Artikal> artikli = new ArrayList<>();
     ArrayList<Double> kolicine  = new ArrayList<>();
 
+    public ArrayList<Artikal> getArtikli() {
+        return artikli;
+    }
+
+    public ArrayList<Double> getKolicine() {
+        return kolicine;
+    }
+
+    public void setArtikli(ArrayList<Artikal> artikli) {
+        this.artikli = artikli;
+    }
+
+
+    public void setKolicine(ArrayList<Double> kolicine) {
+        this.kolicine = kolicine;
+    }
 
     public void dodajStavku(Artikal art, double kolicina) {
 artikli.add(art);
