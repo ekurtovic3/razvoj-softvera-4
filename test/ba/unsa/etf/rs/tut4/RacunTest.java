@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RacunTest {
-/*
+
     @Test
     void test1() {
         Racun r = new Racun();
@@ -18,5 +18,5 @@ class RacunTest {
     void testPrazno() {
         Racun r = new Racun();
         assertEquals(0, r.ukupanIznos());
-    }*/
+    }
 }
