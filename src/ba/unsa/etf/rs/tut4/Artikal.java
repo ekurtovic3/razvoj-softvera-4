@@ -7,17 +7,17 @@ public class Artikal {
     private String Sifra, Naziv;
 
     public void setCijena(double cijena) {
-        if(cijena<=0) throw new IllegalArgumentException ("Cijena je negativna");
+        if (cijena <= 0) throw new IllegalArgumentException("Cijena je negativna");
         Cijena = cijena;
     }
 
     public void setSifra(String sifra) {
-        if(sifra.isEmpty()) throw new IllegalArgumentException ("Šifra je prazna");
+        if (sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
         Sifra = sifra;
     }
 
     public void setNaziv(String naziv) {
-        if(naziv.isEmpty()) throw new IllegalArgumentException ("Naziv je prazan");
+        if (naziv.isEmpty()) throw new IllegalArgumentException("Naziv je prazan");
         Naziv = naziv;
     }
 
@@ -34,10 +34,10 @@ public class Artikal {
     }
 
     public Artikal(String JedanArtikal) {
-        String pom[]=JedanArtikal.split(",");
-        Sifra=pom[0];
-        Naziv=pom[1];
-        Cijena=Double.parseDouble(pom[2]);
+        String pom[] = JedanArtikal.split(",");
+        Sifra = pom[0];
+        Naziv = pom[1];
+        Cijena = Double.parseDouble(pom[2]);
 
     }
 
@@ -46,19 +46,37 @@ public class Artikal {
     }
 
     public Artikal(String sifra, String naziv, double cijena) {
-       setCijena(cijena);
-       setSifra(sifra);
-       setNaziv(naziv);
+        setCijena(cijena);
+        setSifra(sifra);
+        setNaziv(naziv);
     }
+
+    public static void izbaciDuplikate(ArrayList < Artikal > Lista) {
+
+         ArrayList < Artikal > pomLista = new ArrayList <> ();
+        for (Artikal element: Lista) {
+            pomLista.add(element);
+        }
+        Lista.removeAll(pomLista);
+        for (Artikal element: pomLista) {
+            if (!Lista.contains(element)) {
+                Lista.add(element);
+            }
+        }
+    }
+
+
+
+
     @Override
-    public String toString(){
+    public String toString() {
         return Sifra + "," + Naziv + "," + Cijena;
     }
 
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         if (!(o instanceof Artikal)) return false;
-        Artikal artikal = (Artikal)o;
+        Artikal artikal = (Artikal) o;
         return (this.Cijena == artikal.Cijena && this.Naziv == artikal.Naziv && this.Sifra == artikal.Sifra);
     }
 
