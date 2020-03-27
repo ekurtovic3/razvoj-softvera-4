@@ -60,9 +60,13 @@ public class Artikal {
         Lista.removeAll(pomLista);
         for (Artikal element: pomLista) {
             if (!Lista.contains(element)) {
+
                 Lista.add(element);
+
             }
         }
+
+
     }
 
 
