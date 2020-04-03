@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="302.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tut4.Controller">
@@ -49,10 +50,13 @@
                               <Label text="Artikal:" />
                               <Label text="Kolicina:" GridPane.rowIndex="1" />
                               <Label text="Aktuelni racun:" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ChoiceBox prefHeight="26.0" prefWidth="96.0" GridPane.columnIndex="1" />
-                              <TextArea prefHeight="83.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Spinner  GridPane.columnIndex="1" GridPane.rowIndex="1" initialValue="3" ><editable>true</editable> </Spinner>
+                              <Button mnemonicParsing="false" onAction="#Dodaj" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="choicebox" prefHeight="26.0" prefWidth="96.0" GridPane.columnIndex="1" />
+                               <TextArea fx:id="aktuelniracun" prefHeight="83.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3"><editable>false</editable></TextArea>
+                              <Spinner fx:id="kolicina" editable="true" max="100" min="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <effect>
+                                    <Blend />
+                                 </effect> </Spinner>
                            </children>
                         </GridPane>
                      </children></AnchorPane>
