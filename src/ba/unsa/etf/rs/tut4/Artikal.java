@@ -2,7 +2,7 @@ package ba.unsa.etf.rs.tut4;
 
 import java.util.ArrayList;
 
-public class Artikal  {
+public class Artikal {
     private double Cijena;
     private String Sifra, Naziv;
 
@@ -35,12 +35,12 @@ public class Artikal  {
 
     public Artikal(String JedanArtikal) {
         String pom[] = JedanArtikal.split(",");
-        Sifra = pom[0];
-        Naziv = pom[1];
-        Cijena = Double.parseDouble(pom[2]);
-
+        double a = Double.parseDouble(pom[2]);
+        Artikal artikal = new Artikal(pom[0], pom[1], a);
+        this.setCijena(artikal.getCijena());
+        this.setNaziv(artikal.getNaziv());
+        this.setSifra(artikal.getSifra());
     }
-
 
 
     public Artikal(String sifra, String naziv, double cijena) {
@@ -49,14 +49,14 @@ public class Artikal  {
         setNaziv(naziv);
     }
 
-    public static void izbaciDuplikate(ArrayList < Artikal > Lista) {
+    public static void izbaciDuplikate(ArrayList<Artikal> Lista) {
 
-         ArrayList < Artikal > pomLista = new ArrayList <> ();
-        for (Artikal element: Lista) {
+        ArrayList<Artikal> pomLista = new ArrayList<>();
+        for (Artikal element : Lista) {
             pomLista.add(element);
         }
         Lista.removeAll(pomLista);
-        for (Artikal element: pomLista) {
+        for (Artikal element : pomLista) {
             if (!Lista.contains(element)) {
 
                 Lista.add(element);
