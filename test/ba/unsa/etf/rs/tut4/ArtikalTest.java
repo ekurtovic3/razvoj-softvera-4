@@ -13,6 +13,11 @@ class ArtikalTest {
         Artikal a = new Artikal("ABC", "Proizvod", 100);
         assertEquals("ABC", a.getSifra());
     }
+    @Test
+    void getSifra2() {
+        Artikal a = new Artikal("OPRS", "Proizvod", 100);
+        assertEquals("OPRS", a.getSifra());
+    }
 
     @Test
     void setSifra() {
@@ -38,6 +43,11 @@ class ArtikalTest {
     void getCijena() {
         Artikal a = new Artikal("ABC", "Proizvod", 100);
         assertEquals(100, a.getCijena());
+    }
+    @Test
+    void getCijena2() {
+        Artikal a = new Artikal("ADA", "Proizvod", 20);
+        assertEquals(20, a.getCijena());
     }
 
     @Test
@@ -91,6 +101,20 @@ class ArtikalTest {
         assertThrows(IllegalArgumentException.class, () -> {
             a.setNaziv("");
         }, "Naziv je prazan");
+    }
+
+    @Test
+    void Artikal(){
+        Artikal a=new Artikal("ABC,Proizvod,100");
+        assertEquals("ABC", a.getSifra());
+        assertEquals("Proizvod", a.getNaziv());
+        assertEquals(100, a.getCijena());
+    }
+    @Test
+    void toStringTest(){
+        Artikal a = new Artikal("ABC", "Proizvod", 115.2);
+        assertEquals("ABC,Proizvod,115.2", a.toString());
+
     }
 
     @Test

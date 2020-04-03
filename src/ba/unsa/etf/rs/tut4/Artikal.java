@@ -41,9 +41,7 @@ public class Artikal {
 
     }
 
-    public Artikal() {
 
-    }
 
     public Artikal(String sifra, String naziv, double cijena) {
         setCijena(cijena);
@@ -68,9 +66,6 @@ public class Artikal {
 
 
     }
-
-
-
 
     @Override
     public String toString() {
