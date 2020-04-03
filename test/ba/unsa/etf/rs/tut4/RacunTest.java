@@ -6,7 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RacunTest {
 
+    @Test
+    void dodajStavku() {
+        Racun r = new Racun();
+        r.dodajStavku(new Artikal("HLB", "Hljeb", 1), 1);
+        r.dodajStavku(new Artikal("JAJ", "Jaje", 1), 5);
+        assertEquals(6, r.ukupanIznos());
 
+    }
 
     @Test
     void test1() {
