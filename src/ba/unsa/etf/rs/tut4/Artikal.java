@@ -2,7 +2,7 @@ package ba.unsa.etf.rs.tut4;
 
 import java.util.ArrayList;
 
-public class Artikal {
+public class Artikal  {
     private double Cijena;
     private String Sifra, Naziv;
 
