@@ -18,6 +18,7 @@ public class Controller {
     public Spinner kolicina;
     public TextArea aktuelniracun;
     public String racun = new String();
+    private double suma=0;
 
 
     public void dodajArtikle(ActionEvent actionEvent) {
@@ -43,31 +44,13 @@ public class Controller {
         String kol = kolicina.getValue().toString();
         int i = Integer.parseInt(kol.trim());
         Artikal artikal = new Artikal(value);
-        trenutniracun.dodajStavku(artikal, 5);
-        double suma = trenutniracun.ukupanIznos();
+        trenutniracun.dodajStavku(artikal, i);
+        suma = suma+trenutniracun.ukupanIznos();
         double iznos = i * artikal.getCijena();
-        // System.out.printf(kol+" "+artikal.getCijena());
         racun = racun + " " + artikal.getSifra() + " " + kol + " " + iznos + "\n";
-        aktuelniracun.setText(racun);
+        aktuelniracun.setText(racun+"\nUkupno: "+suma);
 
     }
 
 }
 
-/*
-public void Dodaj(ActionEvent actionEvent) {
-  aktuelniracun.clear();
-    for(int i=0; i<listaArtikala.size(); i++){
-        if(listaArtikala.get(i).getSifra().equals(choicebox.getValue())){
-            sadasnjiRacun.dodajStavku(listaArtikala.get(i),(Integer)kolicina.getValue());
-        }
-    }
-    String string = new String();
-    for(int i=0; i<sadasnjiRacun.getSviArtikli().size(); i++){
-        string = string + String.format("%-12s %-4s %.2f\n",sadasnjiRacun.getSviArtikli().get(i).getSifra(),sadasnjiRacun.getKolicinaArtikala().get(i).toString(),sadasnjiRacun.getSviArtikli().get(i).getCijena());
-    }
-    string = string + String.format("UKUPNO %13.2f",sadasnjiRacun.ukupanIznos());
-    aktuelniracun.setText(string);
-}
-}
-*/

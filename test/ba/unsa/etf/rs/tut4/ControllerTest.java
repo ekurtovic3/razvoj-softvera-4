@@ -105,5 +105,33 @@ class ControllerTest {
         String area3Str = area3.getText();
         assertEquals(" DEF 4 4.0\n", area3Str);
     }
+@Test
+    void dodavanje2ArtiklaNaRacunTest(FxRobot robot) {
+        TextArea area2 = robot.lookup("#unosArtikla").queryAs(TextArea.class);
+        TextArea area1 = robot.lookup("#unosArtikla").queryAs(TextArea.class);
+        Button dodajArt = robot.lookup("#dodaj").queryAs(Button.class);
+        robot.clickOn(area1);
+        robot.write("ABC,Proizvod,1\nDEF,Proizvod,1\nHFG,Proizvod,1");
+        robot.clickOn(dodajArt);
+        String inArea = area2.getText();
+        assertEquals("ABC,Proizvod,1\nDEF,Proizvod,1\nHFG,Proizvod,1", inArea);
+        robot.clickOn("#TabRacun");
+        robot.clickOn("#choicebox");
+        robot.type(KeyCode.DOWN).type(KeyCode.ENTER);
+        robot.clickOn("#kolicina");
+        robot.press(KeyCode.CONTROL).press(KeyCode.A).release(KeyCode.A).release(KeyCode.CONTROL);
+        robot.type(KeyCode.DIGIT4);
+        robot.clickOn("#dodajArtikle");
+        robot.clickOn("#choicebox");
+        robot.type(KeyCode.ENTER);
+        robot.clickOn("#kolicina");
+        robot.press(KeyCode.CONTROL).press(KeyCode.A).release(KeyCode.A).release(KeyCode.CONTROL);
+        robot.type(KeyCode.DIGIT4);
+        robot.clickOn("#dodajArtikle");
+        TextArea area3 = robot.lookup("#aktuelniracun").queryAs(TextArea.class);
+        String area3Str = area3.getText();
+        assertEquals(" DEF 4 4.0\n DEF 4 4.0\n", area3Str);
+    }
+
 
 }
