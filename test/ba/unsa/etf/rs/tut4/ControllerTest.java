@@ -103,7 +103,7 @@ class ControllerTest {
         robot.clickOn("#dodajArtikle");
         TextArea area3 = robot.lookup("#aktuelniracun").queryAs(TextArea.class);
         String area3Str = area3.getText();
-        assertEquals(" DEF 4 4.0\n", area3Str);
+        assertEquals(" DEF 4 4.0\nUkupno: 4.0", area3Str);
     }
 @Test
     void dodavanje2ArtiklaNaRacunTest(FxRobot robot) {
@@ -130,7 +130,7 @@ class ControllerTest {
         robot.clickOn("#dodajArtikle");
         TextArea area3 = robot.lookup("#aktuelniracun").queryAs(TextArea.class);
         String area3Str = area3.getText();
-        assertEquals(" DEF 4 4.0\n DEF 4 4.0\n", area3Str);
+        assertEquals(" DEF 4 4.0\n DEF 4 4.0\nUkupno: 8.0", area3Str);
     }
 
 

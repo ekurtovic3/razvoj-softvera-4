@@ -48,8 +48,7 @@ public class Controller {
         suma = suma+trenutniracun.ukupanIznos();
         double iznos = i * artikal.getCijena();
         racun = racun + " " + artikal.getSifra() + " " + kol + " " + iznos + "\n";
-        aktuelniracun.setText(racun+"\nUkupno: "+suma);
-
+        aktuelniracun.setText(racun+"Ukupno: "+suma);
     }
 
 }
