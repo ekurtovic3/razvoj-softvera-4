@@ -24,6 +24,7 @@ import javax.swing.*;
 @ExtendWith(ApplicationExtension.class)
 class ControllerTest {
 
+
     @Start
     public void start(Stage stage) throws Exception {
         Parent root = (Parent) FXMLLoader.load(this.getClass().getResource("/fxml/sample.fxml"));
