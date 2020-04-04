@@ -6,6 +6,7 @@ public class Artikal {
     private double Cijena;
     private String Sifra, Naziv;
 
+
     public void setCijena(double cijena) {
         if (cijena <= 0) throw new IllegalArgumentException("Cijena je negativna");
         Cijena = cijena;

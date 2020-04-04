@@ -31,7 +31,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Račun">
+          <Tab text="Račun" fx:id="TabRacun"  >
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="278.0">
                      <children>
@@ -50,7 +50,7 @@
                               <Label text="Artikal:" />
                               <Label text="Kolicina:" GridPane.rowIndex="1" />
                               <Label text="Aktuelni racun:" GridPane.rowIndex="3" />
-                              <Button mnemonicParsing="false" onAction="#Dodaj" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" fx:id="dodajArtikle"  onAction="#Dodaj" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <ChoiceBox fx:id="choicebox" prefHeight="26.0" prefWidth="96.0" GridPane.columnIndex="1" />
                                <TextArea fx:id="aktuelniracun" prefHeight="83.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3"><editable>false</editable></TextArea>
                               <Spinner fx:id="kolicina" editable="true" max="100" min="1" GridPane.columnIndex="1" GridPane.rowIndex="1">
