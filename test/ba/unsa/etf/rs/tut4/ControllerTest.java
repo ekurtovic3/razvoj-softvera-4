@@ -43,6 +43,7 @@ class ControllerTest {
 
     }
 
+
     @Test
     void TestArtikalTabTest(FxRobot robot) {
         Button dodajArt = robot.lookup("#dodaj").queryAs(Button.class);
